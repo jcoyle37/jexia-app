@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Incoming requests</title>
+		<script src="./js/socket.io.js"></script>
+	</head>
+
+	<body>
+		<h1>Displaying incoming HTTP requests:</h1>
+
+		<div id="output"></div>
+
+		<script>
+			var socket = io();
+			var output = document.getElementById('output');
+
+			socket.on('req', function(res) {
+				output.innerHTML += 'Request logged to console<br/>';
+				console.log(res);
+			});
+		</script>
+  	</body>
+</html>
